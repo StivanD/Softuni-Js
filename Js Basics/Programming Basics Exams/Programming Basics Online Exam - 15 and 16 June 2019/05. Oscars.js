@@ -1,41 +1,32 @@
-function oscars(input){
-    let budget = Number(input[0]);
-    let seriesCount = Number(input[1]);
+function oscars(input) {
+    let actorName = input[0];
+    let academyPoints = Number(input[1]);
+    let judgesCount = Number(input[2]);
     
-    let index = 2;
+    index = 3;
+    let currentJudgeName = input[index];
+    let currentJudgePoints = input[index + 1];
     
-    for (let i = 1; i <= seriesCount; i++) {
-        let currentSeries = input[index];
-        let currentPrice = Number(input[index + 1]);
+    let points = academyPoints;
+    let hasEnoughPoints = false;
+    
+    for (let i = 1; i <= judgesCount; i++) {
+        points += (currentJudgeName.length * currentJudgePoints) / 2;
         
-        switch (currentSeries) {
-            case "Thrones":
-                budget -= currentPrice / 2;
-                break;
-            case "Lucifer":
-                budget -= currentPrice - currentPrice * 0.4;
-                break;
-            case "Protector":
-                budget -= currentPrice - currentPrice * 0.3;
-                break;
-            case "TotalDrama":
-                budget -= currentPrice - currentPrice * 0.2;
-                break;
-            case "Area":
-                budget -= currentPrice - currentPrice * 0.1;
-                break;
-            default:
-                budget -= currentPrice;
-                break;
+        if (points > 1250.5) {
+            hasEnoughPoints = true;
+            break;
         }
         
         index += 2;
+        currentJudgeName = input[index];
+        currentJudgePoints = input[index + 1];
     }
     
-    if (budget >= 0) {
-        console.log(`You bought all the series and left with ${budget.toFixed(2)} lv.`);
+    if (hasEnoughPoints) {
+        console.log(`Congratulations, ${actorName} got a nominee for leading role with ${points.toFixed(1)}!`);
     }
     else {
-        console.log(`You need ${Math.abs(budget).toFixed(2)} lv. more to buy the series!`);
+        console.log(`Sorry, ${actorName} you need ${(1250.5 - points).toFixed(1)} more!`);
     }
 }

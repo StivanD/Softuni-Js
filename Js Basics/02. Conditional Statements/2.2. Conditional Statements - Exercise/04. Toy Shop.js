@@ -1,11 +1,6 @@
 function toyShop(input){
-    let excursionPrice = Number(input[0]);
-    let puzzlesCount = Number(input[1]);
-    let dollsCount = Number(input[2]);
-    let teddyBearsCount = Number(input[3]);
-    let minionsCount = Number(input[4]);
-    let trucksCount = Number(input[5]);
-
+    let [excursionPrice, puzzlesCount, dollsCount, teddyBearsCount, minionsCount, trucksCount] = [...input.map((x) => Number(x))];
+    
     let toysCount = puzzlesCount + dollsCount + teddyBearsCount + minionsCount + trucksCount;
     let toysPrice = puzzlesCount * 2.60 + dollsCount * 3 + teddyBearsCount * 4.10 + minionsCount * 8.20 + trucksCount * 2;
 

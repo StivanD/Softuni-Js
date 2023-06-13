@@ -1,4 +1,4 @@
-function solve(arr) {
+function maxNumber(arr) {
     let finalNum = [];
     let flag = false;
     let lastNum = arr.length;

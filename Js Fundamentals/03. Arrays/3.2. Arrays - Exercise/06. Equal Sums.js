@@ -1,4 +1,4 @@
-function solve(arr) {
+function equalSums(arr) {
     let leftSum = 0;
     let rightSum = 0;
     let index = 0;

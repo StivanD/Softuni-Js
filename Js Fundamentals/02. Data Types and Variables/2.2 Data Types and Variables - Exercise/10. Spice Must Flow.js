@@ -4,16 +4,14 @@ function spiceMustFlow(startingYield) {
     
     while (startingYield >= 100) {
         days++;
-        spices += startingYield;
-        if (spices >= 26) {
-            spices -= 26;
-        }
+        spices += startingYield - 26;
         startingYield -= 10;
     }
     
-    spices -=26
+    if (spices != 0) {
+        spices -= 26;
+    }
     
     console.log(days);
     console.log(spices);
 }
-

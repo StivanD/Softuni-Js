@@ -13,3 +13,5 @@ function substract(c) {
 
 console.log(sub);
 }
+
+addAndSubstract(23,6,10)

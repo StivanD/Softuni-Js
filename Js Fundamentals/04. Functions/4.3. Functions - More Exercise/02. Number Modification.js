@@ -19,5 +19,3 @@ function numberModification(number) {
     
     console.log(num);
 }
-
-numberModification(101)
